@@ -1,0 +1,134 @@
+Detailed Diagnostic Report
+
+### 1. Property Issue Summary
+
+
+* **Dampness/Moisture:** Observed in multiple areas including Hall, Bedrooms, Kitchen, Master bedroom wall, Parking Area, Common Bathroom Ceiling, Hall of Flat No. 103, Common Bedroom of Flat No. 103, Master Bedroom of Flat No. 103, Kitchen of Flat No. 103, Common Bathroom of Flat No. 103. (Urgency: 4/5 - high-impact issue type)
+
+* **Tile Issues:** Tile hollowness in Common Bathroom and MB Bathroom. Open tile joints in Flat no 203, Common & Master Bedroom Bathrooms of Flat No. 203, gaps between tile joints in Common Bathroom of Flat No. 103, Master Bedroom Bathroom of Flat No. 103. (Urgency: 3/5 - routine finding, except Common Bathroom of Flat No. 103 which is 4/5)
+
+* **Leakage:** Outlet leakage in Common Bathroom Ceiling, leakage in Parking ceiling below Flat No. 103. (Urgency: 4/5 - high-impact issue type)
+
+* **Cracks:** Crack and Duct in External wall, cracks in External wall of building near Master Bedroom of Flat No. 103. (Urgency: 3/5 and 2/5 respectively - routine finding)
+
+* **Generic Issue:** Issue reported in Master bedroom bathroom. (Urgency: 3/5 - routine finding)
+
+
+### 2. Area-wise Observations
+
+
+* **Hall:** Skirting level Dampness (Cluster: Hall – moisture).
+
+* **Common Bathroom:** Tile hollowness (Cluster: Common Bathroom – damage). There is a conflicting description: tile hollowness vs tile hollowness and plumbing issue.
+
+* **Bedroom:** Skirting level Dampness (Cluster: Bedroom – moisture).
+
+* **Master bedroom:** Skirting level Dampness (Cluster: Master bedroom – moisture).
+
+* **MB Bathroom:** Tile hollowness (Cluster: MB Bathroom – damage).
+
+* **Kitchen:** Skirting level Dampness (Cluster: Kitchen – moisture).
+
+* **Master bedroom bathroom:** Issue (Cluster: Master bedroom bathroom – damage).
+
+* **Master bedroom wall:** Damness (Cluster: Master bedroom wall – moisture).
+
+* **External wall:** Crack and Duct (Cluster: External wall – damage).
+
+* **Parking Area:** Seepage (Cluster: Parking Area – moisture).
+
+* **Common Bathroom Ceiling:** Dampness (Cluster: Common Bathroom Ceiling – moisture), outlet Leakage (Cluster: Common Bathroom Ceiling – leakage).
+
+* **Flat no 203:** Tile joint open (Cluster: Flat no 203 – damage).
+
+* **Hall of Flat No. 103:** Observed dampness at the skirting level (Cluster: Hall of Flat No. 103 – moisture).
+
+* **Common Bathroom of Flat No. 103:** Observed gaps between the tile joints. Thermal/Inspection: Observed plumbing issue & gaps between the tile joints (Cluster: Common Bathroom of Flat No. 103 – damage), Observed mild dampness at the ceiling (Cluster: Common Bathroom of Flat No. 103 – moisture).
+
+* **Common Bedroom of Flat No. 103:** Observed dampness at the skirting level (Cluster: Common Bedroom of Flat No. 103 – moisture).
+
+* **Master Bedroom of Flat No. 103:** Observed dampness at the skirting level. Thermal/Inspection: Observed dampness & efflorescence on the wall surface (Cluster: Master Bedroom of Flat No. 103 – moisture).
+
+* **Master Bedroom Bathroom of Flat No. 103:** Observed gaps between the tile joints (Cluster: Master Bedroom Bathroom of Flat No. 103 – damage).
+
+* **Kitchen of Flat No. 103:** Observed dampness at the skirting level (Cluster: Kitchen of Flat No. 103 – moisture).
+
+* **External wall of building near Master Bedroom of Flat No. 103:** Observed cracks (Cluster: External wall of building near Master Bedroom of Flat No. 103 – crack).
+
+* **Parking ceiling below Flat No. 103:** Observed leakage (Cluster: Parking ceiling below Flat No. 103 – leakage).
+
+* **Common & Master Bedroom Bathrooms of Flat No. 203:** Observed gap between tile joints (Cluster: Common & Master Bedroom Bathrooms of Flat No. 203 – damage).
+
+
+### 3. Probable Root Cause
+
+
+* **Skirting level Dampness (Hall, Bedroom, Master bedroom, Kitchen, Hall of Flat No. 103, Common Bedroom of Flat No. 103, Kitchen of Flat No. 103):** Rising damp or a plumbing leak near the skirting board is likely causing the dampness. Evidence: Area: [Area]; Issue type: moisture; Description: Skirting level Dampness. Confidence: 85%. The recurrence of skirting-level dampness across multiple rooms suggests a systemic moisture intrusion pattern rather than isolated incidents.
+
+* **Tile hollowness (Common Bathroom, MB Bathroom):** Poor tile adhesion or substrate preparation likely caused the tile hollowness. Evidence: Area: [Area]; Issue type: damage; Description: tile hollowness. Confidence: 65%.
+
+* **Damness (Master bedroom wall):** A leak or condensation within the wall is likely causing the dampness. Evidence: Area: Master bedroom wall; Issue type: moisture; Description: damness. Confidence: 70%.
+
+* **Seepage (Parking Area):** Groundwater or a plumbing leak is likely causing seepage in the parking area. Evidence: Area: Parking Area; Issue type: moisture; Description: seepage. Confidence: 70%.
+
+* **Dampness (Common Bathroom Ceiling):** A leak from the floor above or condensation is likely causing the dampness on the ceiling. Evidence: Area: Common Bathroom Ceiling; Issue type: moisture; Description: Dampness. Confidence: 70%.
+
+* **outlet Leakage (Common Bathroom Ceiling):** A plumbing fixture or pipe is leaking at the outlet. Evidence: Area: Common Bathroom Ceiling; Issue type: leakage; Description: outlet Leakage. Confidence: 70%.
+
+* **Tile joint open (Flat no 203), Observed gaps between the tile joints (Common Bathroom of Flat No. 103, Master Bedroom Bathroom of Flat No. 103), Observed gap between tile joints (Common & Master Bedroom Bathrooms of Flat No. 203):** Tile joint failure is allowing water to penetrate the substrate. Evidence: Area: [Area]; Issue type: damage; Description: [Description]. Confidence: 45% or 70%.
+
+* **Observed plumbing issue & gaps between the tile joints (Common Bathroom of Flat No. 103):** Plumbing issues and gaps in tile joints are allowing water to penetrate the structure. Evidence: Area: Common Bathroom of Flat No. 103; Issue type: damage; Description: Observed plumbing issue & gaps between the tile joints. Confidence: 45%.
+
+* **Observed dampness & efflorescence on the wall surface (Master Bedroom of Flat No. 103):** Dampness and efflorescence suggest moisture intrusion and salt deposition on the wall surface, likely from rising damp or a leak. Evidence: Area: Master Bedroom of Flat No. 103; Issue type: moisture; Description: Observed dampness & efflorescence on the wall surface. Confidence: 85%.
+
+* **Observed cracks (External wall of building near Master Bedroom of Flat No. 103):** Cracks in the external wall are allowing water ingress. Evidence: Area: External wall of building near Master Bedroom of Flat No. 103; Issue type: crack; Description: Observed cracks. Confidence: 70%.
+
+* **Observed leakage (Parking ceiling below Flat No. 103):** A leak from the unit above is causing the leakage in the parking ceiling. Evidence: Area: Parking ceiling below Flat No. 103; Issue type: leakage; Description: Observed leakage. Confidence: 85%.
+
+* **Crack and Duct (External wall):** Cracks in the external wall are allowing water ingress, potentially exacerbated by the duct. Evidence: Area: External wall; Issue type: damage; Description: crack and Duct. Confidence: 70%.
+
+* **Issue (Master bedroom bathroom):** Insufficient diagnostic detail available to determine root cause. Further inspection recommended. Evidence: Area: Master bedroom bathroom; Issue type: damage; Description: Issue. Confidence: 45%.
+
+
+### 4. Severity Assessment
+
+
+* **Dampness/Moisture (Hall, Bedroom, Master bedroom, Kitchen, Master bedroom wall, Parking Area, Common Bathroom Ceiling, Hall of Flat No. 103, Common Bedroom of Flat No. 103, Master Bedroom of Flat No. 103, Kitchen of Flat No. 103, Common Bathroom of Flat No. 103):** High severity (Urgency: 4/5). Unaddressed moisture can lead to structural damage and mold growth.
+
+* **Tile hollowness (Common Bathroom, MB Bathroom):** Moderate severity (Urgency: 3/5). Hollow tiles can detach and pose a safety hazard.
+
+* **Leakage (Outlet leakage in Common Bathroom Ceiling, leakage in Parking ceiling below Flat No. 103):** High severity (Urgency: 4/5). Leaks can cause significant water damage and structural issues.
+
+* **Cracks (External wall, External wall of building near Master Bedroom of Flat No. 103):** Moderate severity (Urgency: 3/5 and 2/5 respectively). Crack severity depends on width and progression. Recommend monitoring and measurement.
+
+* **Tile joint open (Flat no 203), Observed gaps between the tile joints (Common Bathroom of Flat No. 103, Master Bedroom Bathroom of Flat No. 103), Observed gap between tile joints (Common & Master Bedroom Bathrooms of Flat No. 203):** Moderate severity (Urgency: 3/5, except Common Bathroom of Flat No. 103 which is 4/5). Open tile joints allow water ingress, potentially damaging the substrate.
+
+* **Issue (Master bedroom bathroom):** Low severity (Urgency: 3/5) due to lack of specific information. Requires further investigation.
+
+
+### 5. Recommended Actions
+
+
+* **Address Dampness/Moisture (Urgency: 4/5):** Investigate the source of moisture in the Hall, Bedrooms, Kitchen, Master bedroom wall, Parking Area, Common Bathroom Ceiling, Hall of Flat No. 103, Common Bedroom of Flat No. 103, Master Bedroom of Flat No. 103, Kitchen of Flat No. 103, Common Bathroom of Flat No. 103. Repair any plumbing leaks and improve ventilation.
+
+* **Repair Leakage (Urgency: 4/5):** Repair the outlet leakage in the Common Bathroom Ceiling and the leakage in the Parking ceiling below Flat No. 103 immediately to prevent further water damage.
+
+* **Monitor and Measure Cracks (Urgency: 3/5 and 2/5):** Monitor the cracks in the External wall and External wall of building near Master Bedroom of Flat No. 103 for any progression. Measure the width of the cracks to assess their severity.
+
+* **Repair Tile Issues (Urgency: 3/5, except Common Bathroom of Flat No. 103 which is 4/5):** Repair or replace hollow tiles in the Common Bathroom and MB Bathroom. Regrout open tile joints in Flat no 203, Common Bathroom of Flat No. 103, Master Bedroom Bathroom of Flat No. 103, Common & Master Bedroom Bathrooms of Flat No. 203.
+
+* **Further Inspection (Urgency: 3/5):** Conduct a more detailed inspection of the Master bedroom bathroom to determine the nature and cause of the reported "Issue".
+
+
+### 6. Additional Notes
+
+
+This report is based on the provided inspection and thermal data. The scope of the inspection may have been limited by access constraints or other factors. The accuracy of the findings depends on the quality of the data and the expertise of the inspector.
+
+
+### 7. Missing or Unclear Information
+
+
+* Specific details regarding the "Issue" reported in the Master bedroom bathroom are missing.
+
+* Temperature deltas and ANOMALY flags are Not Available.
