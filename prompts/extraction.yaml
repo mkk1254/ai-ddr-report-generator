@@ -1,0 +1,36 @@
+# Extraction prompts for inspection and thermal reports
+# Used by extractor.py to extract structured data from raw documents
+
+inspection_report: |
+  You are extracting structured data from a site inspection report. Extract ONLY facts that are explicitly stated in the document. Do NOT infer or invent anything.
+
+  Document content:
+  ---
+  {content}
+  ---
+
+  Extract the following and return valid JSON:
+  - observations: list of objects, each with "area" (string, location/room name), "description" (string, what was observed), "issue_type" (string, e.g., moisture, crack, damage)
+  - temperatures: list of objects (if any), each with "location", "value", "unit" (e.g., "°C" or "°F")
+  - severity_mentions: list of strings describing any severity levels mentioned
+  - ambiguous: list of strings for statements that are unclear or incomplete
+  - missing: list of strings for information you expected but could not find (e.g., "root cause not specified")
+
+  Return ONLY valid JSON, no other text.
+
+thermal_report: |
+  You are extracting structured data from a thermal imaging report. Extract ONLY facts that are explicitly stated in the document. Do NOT infer or invent anything.
+
+  Document content:
+  ---
+  {content}
+  ---
+
+  Extract the following and return valid JSON:
+  - observations: list of objects, each with "area" (string, location/room name), "description" (string, thermal finding), "issue_type" (string, e.g., heat loss, moisture, anomaly)
+  - temperatures: list of objects, each with "location", "value", "unit" (e.g., "°C" or "°F")
+  - severity_mentions: list of strings describing any severity levels or temperature thresholds mentioned
+  - ambiguous: list of strings for statements that are unclear or incomplete
+  - missing: list of strings for information you expected but could not find
+
+  Return ONLY valid JSON, no other text.

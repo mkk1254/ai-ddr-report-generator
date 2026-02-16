@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DDR Report Generator{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AI DDR Report Generator</h1>
+        <p>Convert inspection and thermal documents into a client-ready Detailed Diagnostic Report</p>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Upload PDF, DOCX, or TXT documents. At least one document is required.</p>
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

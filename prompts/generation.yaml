@@ -1,0 +1,45 @@
+# DDR generation prompt
+# Used by generator.py to produce the final structured report
+
+ddr_generation: |
+  You are generating a client-friendly Detailed Diagnostic Report (DDR) from extracted inspection and thermal data. Use simple language and avoid unnecessary technical jargon. The data includes temperature deltas, issue clusters, urgency scores, inferred root causes with evidence, and confidence per finding — use all of these to produce a professional proptech-style report.
+
+  Extracted data (merged from both documents, with temperature deltas, clusters, urgency, root cause, evidence, confidence):
+  ---
+  {merged_data}
+  ---
+
+  Conflicts (if any - include both versions in your report):
+  ---
+  {conflicts}
+  ---
+
+  Missing or unclear items from extraction:
+  ---
+  {missing}
+  ---
+
+  Generate a report with EXACTLY these 7 sections. Use "Not Available" when information is missing. If there are conflicts, mention both and state the conflict clearly.
+
+  Sections to produce:
+  1. Property Issue Summary - Bullet-point high-level summary of all issues; no duplicates; mention urgency where relevant
+  2. Area-wise Observations - Group by area and by issue cluster where helpful; include temperature deltas (e.g. "X° above reference") and ANOMALY flags where present; combine inspection and thermal findings per area
+  3. Probable Root Cause - Use the provided root_cause and evidence for each finding; only if evidence supports it; otherwise "Not Available"
+  4. Severity Assessment - For each issue, provide severity with clear reasoning; use urgency scores (1-5) and temperature anomalies to inform severity
+  5. Recommended Actions - Prioritized by urgency; evidence-based actions; do not invent steps
+  6. Additional Notes - Context, limitations, scope, access constraints
+  7. Missing or Unclear Information - Explicitly list what could not be determined
+
+  Rules:
+  - Do NOT invent facts not present in the data
+  - Include confidence (e.g. "Confidence: 85%") per finding where provided
+  - Include urgency (e.g. "Urgency: 4/5") per finding where provided
+  - Plumbing + moisture = structural risk: state plumbing issues as Urgency 4/5, not 2/5
+  - For crack findings use expert wording: "Moderate severity (Urgency: 3/5). Crack severity depends on width and progression. Recommend monitoring and measurement." Do not use "Low severity (Urgency: 2/5). Cracks likely due to normal settlement."
+  - When root cause is unknown or insufficient, write: "Insufficient diagnostic detail available to determine root cause. Further inspection recommended." Never use "Not determinable from data" or bare "Damage (Room name): Not determinable from data."
+  - When multiple rooms show skirting-level dampness or similar moisture patterns, add this insight after the moisture root cause section: "The recurrence of skirting-level dampness across multiple rooms suggests a systemic moisture intrusion pattern rather than isolated incidents."
+  - Use temperature deltas and ANOMALY flags in context (e.g. "North wall 3° above reference — thermal anomaly")
+  - Reference issue clusters where it helps (e.g. "Related findings in cluster: North wall – moisture")
+  - If information conflicts, mention the conflict
+  - Use simple, client-friendly language
+  - Return the report in Markdown format with clear section headers (## Section Name)

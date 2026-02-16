@@ -1,0 +1,22 @@
+THERMAL IMAGING REPORT
+Property: 123 Main Street
+Date: February 11, 2025
+
+TEMPERATURE READINGS
+
+Living Room North Wall (moisture area): 14.2°C (ambient: 18.5°C)
+- Significant temperature differential indicates moisture/insulation issue
+- Cold spot extends ~1.8m horizontally
+
+Bathroom Ceiling: 16.1°C (ambient: 19.2°C)
+- Moderate thermal anomaly near pipe penetration
+
+Attic Northeast: 8.3°C (attic ambient: 6.1°C)
+- Warmer patch suggests heat loss or moisture
+
+Kitchen: No anomalies detected
+
+SEVERITY
+- Living room: High – large cold area consistent with moisture
+- Bathroom: Medium – localized anomaly
+- Attic: Low – minor variation

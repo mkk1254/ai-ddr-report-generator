@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="upload-section">
+    <form id="upload-form" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="inspection">Inspection Report</label>
+            <input type="file" id="inspection" name="inspection" accept=".pdf,.docx,.doc,.txt,.md">
+        </div>
+        <div class="form-group">
+            <label for="thermal">Thermal Report</label>
+            <input type="file" id="thermal" name="thermal" accept=".pdf,.docx,.doc,.txt,.md">
+        </div>
+        <div class="form-group">
+            <label for="format">Output Format</label>
+            <select id="format" name="format">
+                <option value="markdown">Markdown</option>
+                <option value="json">JSON</option>
+                <option value="html">HTML</option>
+            </select>
+        </div>
+        <button type="submit" id="generate-btn" class="btn btn-primary">Generate Report</button>
+    </form>
+</section>
+
+<div id="loading" class="loading hidden">
+    <p>Generating report... This may take a minute.</p>
+</div>
+
+<div id="error" class="error hidden"></div>
+
+<section id="report-section" class="report-section hidden">
+    <div class="report-header">
+        <h2>Generated Report</h2>
+        <button type="button" id="download-btn" class="btn btn-secondary">Download</button>
+    </div>
+    <div id="report-content" class="report-content"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const form = document.getElementById('upload-form');
+    const generateBtn = document.getElementById('generate-btn');
+    const loading = document.getElementById('loading');
+    const error = document.getElementById('error');
+    const reportSection = document.getElementById('report-section');
+    const reportContent = document.getElementById('report-content');
+    const downloadBtn = document.getElementById('download-btn');
+
+    let lastReport = '';
+    let lastFormat = 'markdown';
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const inspection = document.getElementById('inspection').files[0];
+        const thermal = document.getElementById('thermal').files[0];
+        const format = document.getElementById('format').value;
+
+        if (!inspection && !thermal) {
+            showError('Please upload at least one document (inspection or thermal).');
+            return;
+        }
+
+        const fd = new FormData();
+        if (inspection) fd.append('inspection', inspection);
+        if (thermal) fd.append('thermal', thermal);
+        fd.append('format', format);
+
+        showLoading(true);
+        hideError();
+        reportSection.classList.add('hidden');
+
+        try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 180000); // 3 min for LLM
+
+            const res = await fetch('/generate', {
+                method: 'POST',
+                body: fd,
+                signal: controller.signal,
+            });
+            clearTimeout(timeout);
+
+            const text = await res.text();
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch (parseErr) {
+                showError('Server returned invalid response. Check console and ensure GOOGLE_API_KEY is set in .env');
+                console.error('Response:', text.slice(0, 500));
+                return;
+            }
+
+            if (!res.ok) {
+                showError(data.error || 'Generation failed.');
+                return;
+            }
+
+            if (!data.report) {
+                showError('Report was empty. The model may have failed to generate content.');
+                return;
+            }
+
+            lastReport = data.report;
+            lastFormat = data.format;
+            displayReport(data.report, data.format);
+            reportSection.classList.remove('hidden');
+        } catch (err) {
+            if (err.name === 'AbortError') {
+                showError('Request timed out (3 min). Try again or use smaller documents.');
+            } else {
+                showError('Request failed: ' + (err.message || 'Please try again.'));
+            }
+            console.error(err);
+        } finally {
+            showLoading(false);
+        }
+    });
+
+    downloadBtn.addEventListener('click', () => {
+        if (!lastReport) return;
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/download';
+        const reportInput = document.createElement('input');
+        reportInput.type = 'hidden';
+        reportInput.name = 'report';
+        reportInput.value = lastReport;
+        form.appendChild(reportInput);
+        const formatInput = document.createElement('input');
+        formatInput.type = 'hidden';
+        formatInput.name = 'format';
+        formatInput.value = lastFormat;
+        form.appendChild(formatInput);
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    });
+
+    function displayReport(report, format) {
+        if (format === 'html') {
+            reportContent.innerHTML = report;
+        } else if (format === 'json') {
+            try {
+                const obj = JSON.parse(report);
+                reportContent.innerHTML = '<pre>' + escapeHtml(JSON.stringify(obj, null, 2)) + '</pre>';
+            } catch {
+                reportContent.innerHTML = '<pre>' + escapeHtml(report) + '</pre>';
+            }
+        } else {
+            // Markdown: simple display (for full MD rendering you'd use a library)
+            reportContent.innerHTML = '<pre>' + escapeHtml(report) + '</pre>';
+        }
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function showLoading(show) {
+        loading.classList.toggle('hidden', !show);
+        generateBtn.disabled = show;
+    }
+
+    function showError(msg) {
+        error.textContent = msg;
+        error.classList.remove('hidden');
+    }
+
+    function hideError() {
+        error.textContent = '';
+        error.classList.add('hidden');
+    }
+</script>
+{% endblock %}

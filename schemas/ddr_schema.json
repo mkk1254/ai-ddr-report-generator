@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Detailed Diagnostic Report",
+  "description": "Structure for DDR output",
+  "type": "object",
+  "properties": {
+    "property_issue_summary": { "type": "array", "items": { "type": "string" } },
+    "area_wise_observations": { "type": "object", "additionalProperties": { "type": "array", "items": { "type": "string" } } },
+    "probable_root_cause": { "type": ["string", "null"] },
+    "severity_assessment": { "type": "array", "items": { "type": "object", "properties": { "issue": { "type": "string" }, "severity": { "type": "string" }, "reasoning": { "type": "string" } } } },
+    "recommended_actions": { "type": "array", "items": { "type": "string" } },
+    "additional_notes": { "type": "string" },
+    "missing_or_unclear_information": { "type": "array", "items": { "type": "string" } }
+  }
+}

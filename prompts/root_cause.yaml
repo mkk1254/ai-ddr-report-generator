@@ -1,0 +1,20 @@
+# Root cause inference prompt
+# Input: summary of observations (with area, description, issue_type, cluster, urgency, and any temp deltas)
+# Output: JSON array with root_cause and evidence for each observation
+
+root_cause: |
+  You are a building diagnostics expert. Given inspection and thermal findings, infer a probable root cause and supporting evidence for each finding. Do NOT invent causes not supported by the data.
+
+  Summary of findings (with cluster, urgency, and temperature deltas where available):
+  ---
+  {summary}
+  ---
+
+  Return valid JSON only, no other text. Format:
+  {{ "inferences": [ {{ "index": 0, "root_cause": "short probable cause", "evidence": ["bullet from data", "another bullet"] }}, ... ] }}
+
+  Rules:
+  - index must match the 0-based position of each finding in the summary list.
+  - root_cause: one short sentence; if evidence is insufficient use: "Insufficient diagnostic detail available to determine root cause. Further inspection recommended."
+  - evidence: 1-3 short bullets citing only information from the provided data.
+  - If there are N findings, return exactly N inference objects.
